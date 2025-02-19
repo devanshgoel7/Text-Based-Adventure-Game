@@ -1,6 +1,13 @@
 #include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#define pb push_back
 
-int main(){
-    // all the classes and functions be called here.
+using namespace std;
+
+int main() {
+    // Your code here
+    cout<< "text";
     return 0;
 }
