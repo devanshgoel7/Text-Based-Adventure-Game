@@ -2,13 +2,21 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "Build Game",
             "type": "shell",
-            "command": "cmd.exe",
+            "command": "g++",
             "args": [
-                "/c",
-                "g++ main.cpp area.cpp -o game.exe -static-libgcc -static-libstdc++ -Wl,-subsystem,console"
-            ],
+                    "main.cpp",
+                    "class_files/*.cpp",
+                    "-o",
+                    "game.exe",
+                    "-I",
+                    "header_files/",
+                    "-static-libgcc",
+                    "-static-libstdc++",
+                    "-g",
+                    "-Wall"
+                ],
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -27,9 +35,9 @@
             }
         },
         {
-            "label": "run",
+            "label": "Run Game",
             "type": "shell",
-            "command": "${workspaceFolder}/game.exe",
+            "command": "./game.exe",
             "group": {
                 "kind": "test",
                 "isDefault": true
@@ -38,7 +46,7 @@
                 "reveal": "always",
                 "panel": "new"
             },
-            "dependsOn": ["build"]
+            "dependsOn": ["Build Game"]
         }
     ]
 }
