@@ -1,4 +1,4 @@
-#include "header_files\fight.h"
+#include "fight.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -9,8 +9,9 @@ fight :: fight(){
     atk_pow = 0;
 }
 
-fight :: fight(int pow){
+fight :: fight(int pow, int h){
     atk_pow = pow;
+    hp = h;
 }
 
 int fight :: attack(int atk_pow){
@@ -21,10 +22,10 @@ int fight :: attack(int atk_pow){
 }
 
 void fight :: atk_dmg(int damage, string name){
-    health -= damage;
+    hp -= damage;
 
     cout << name << " took " << damage << " damage" << endl;
-    cout << "Remaining Health: " << health << endl;
+    cout << "Remaining Health: " << hp << endl;
 }
 
 int fight :: defence(int atk_dmg){
@@ -36,8 +37,8 @@ int fight :: defence(int atk_dmg){
 }
 
 void fight :: def_dmg(int new_dmg, string name){
-    health -= new_dmg;
+    hp -= new_dmg;
 
     cout << name << " took " << new_dmg << " damage" << endl;
-    cout << "Remaining Health: " << health << endl;
+    cout << "Remaining Health: " << hp << endl;
 }

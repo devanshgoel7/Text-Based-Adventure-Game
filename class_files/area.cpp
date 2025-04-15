@@ -1,17 +1,17 @@
+#include "area.h"
 #include <iostream>
-#include "header_files\area.h"
+using namespace std;
 
 Area::Area() {
     locked = false;
-    enemey = false;
+    enemy = false;
     chest = false;
 }
 
-Area::Area(string n, string d, bool lock, bool ene, bool c) {
+Area::Area(string n, bool lock, bool ene, bool c) {
     name = n;
-    desc = d;
     locked = lock;
-    enemey = ene;
+    enemy = ene;
     chest = c;
 }
 
@@ -30,26 +30,26 @@ Area* Area::getExit(string dir) {
     return nullptr;
 }
 
-void Area::displayInfo() {
-    cout << "You are in: " << name << endl;
-    cout << desc << endl;
-    
-    cout << "Available exits: ";
+string Area::displayInfo() {
+    string exit_choice;
+
+    cout << "\nAvailable exits: ";
     if (north) cout << "north ";
     if (south) cout << "south ";
     if (east) cout << "east ";
     if (west) cout << "west ";
     cout << endl;
-}
 
-void Area::setdesc(string newdesc) {
-    desc = newdesc;
+    cout << "Where would you like to exit:\nEnter your choice: ";
+    cin >> exit_choice;
+    return exit_choice;
 }
 
 bool Area::hasEnemy() {
-    return enemey;
+    return enemy;
 }
 
 bool Area::hasChest() {
     return chest;
 }
+

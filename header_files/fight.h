@@ -8,12 +8,12 @@ class fight{
     protected:
 
     int atk_pow;
-    int health;
+    int hp;
 
     public:
         fight();
 
-        fight(int pow);
+        fight(int pow, int h);
 
         int attack(int atk_pow);
 

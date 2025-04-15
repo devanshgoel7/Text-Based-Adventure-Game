@@ -5,21 +5,8 @@ using namespace std;
 
 Enemy::Enemy(){}
 
-Enemy::Enemy(string n, int h, int atk){
+Enemy::Enemy(string n, int h, int atk, bool def): fight(atk,h){
     name = n;
-    health = h;
-    atk_pow = atk;
+    defeated = def;
 }
 
-int Enemy::attack(){
-    return atk_pow;
-}
-
-void Enemy::take_dmg(int damage) {
-    health -= damage;
-    cout << name << " took " << damage << " damage! Remaining health: " << health << endl;
-    if (health <= 0) {
-        defeated = true;
-        cout << name << " has been defeated!" << endl;
-    }
-}

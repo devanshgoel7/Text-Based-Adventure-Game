@@ -6,17 +6,19 @@
             "type": "shell",
             "command": "g++",
             "args": [
-                    "main.cpp",
-                    "class_files/*.cpp",
-                    "-o",
-                    "game.exe",
-                    "-I",
-                    "header_files/",
-                    "-static-libgcc",
-                    "-static-libstdc++",
+                    "-std=c++17",
                     "-g",
+                    "main.cpp",
+                    "class_files/area.cpp",
+                    "class_files/enemy.cpp",
+                    "class_files/fight.cpp",
+                    "class_files/items.cpp",
+                    "class_files/player.cpp",
+                    "class_files/ui.cpp",
+                    "-I", "header_files",
+                    "-o", "game.exe",
                     "-Wall"
-                ],
+                    ],
             "group": {
                 "kind": "build",
                 "isDefault": true

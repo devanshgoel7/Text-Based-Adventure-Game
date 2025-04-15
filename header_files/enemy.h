@@ -1,27 +1,22 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
+#include "fight.h"
 #include <iostream>
 using namespace std;
 
-class Enemy{
+class Enemy: public fight{
 
     private:
 
     string name;
-    int health;
-    int atk_pow;
     bool defeated;
 
     public:
     
     Enemy();
 
-    Enemy(string n, int h, int atk);
-
-    int attack();
-
-    void take_dmg(int damage);
+    Enemy(string n,int pow, int h, bool def);
 
     bool isDefeated();
 

@@ -9,9 +9,8 @@ using namespace std;
 class Area {
     private:
     string name;
-    string desc;
     bool locked;
-    bool enemey;
+    bool enemy;
     bool chest;
     Area* north;
     Area* south;
@@ -22,15 +21,13 @@ public:
 
     Area();
 
-    Area(string n, string d, bool lock, bool ene, bool c);
+    Area(string n, bool lock, bool ene, bool c);
 
     void setExit(Area* north, Area* south, Area* east, Area* west);
 
     Area* getExit(string direction);
 
-    void displayInfo();
-
-    void setdesc(string newdesc);
+    string displayInfo();
 
     bool hasEnemy();
 
