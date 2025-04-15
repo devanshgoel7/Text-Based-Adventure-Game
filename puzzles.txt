@@ -1,0 +1,33 @@
+to store puzzles i found 
+1- I have keys but open no locks. I have space but no room. You can enter, but you can't go outside. What am I?
+answer - keyboard
+2-An hourglass is slowly draining sand. You must type the correct answer before it runs out:
+"The more you take, the more I leave behind. What am I?"
+
+Answer: "Footsteps"
+3-"Born of flame, I devour the dark. Without me, secrets remain hidden. What am I?"
+
+✅ Answer: torch(can be used before we give the player a weapon )
+4-"Etched in stone or inked in blood, I carry ancient power. Only the wise may read me."
+
+✅ Answer: rune(this is cool we might just need to give a hint for this though)
+rune
+# others i found which might suit the theme (i also i have some longer versions of this if these puzzles seem small)
+🧠 8. Mind
+Clue:
+"A prison and a palace both, filled with echoes of thought. Locked from sight, yet always with you."
+
+✅ Answer: mind
+
+⚰️ 9. Silence
+Clue:
+"When I arrive, all fades. I am feared in the halls of the brave and the weak. What am I?"
+
+✅ Answer: silence
+
+🗡 10. Betrayal
+Clue:
+"I walk with you till the final gate, then stab you in the back. My name brings dread in loyal hearts."
+
+✅ Answer: betrayal
+
