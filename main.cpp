@@ -1,9 +1,12 @@
 #include "header_files/game_headers.h"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 int main()
 {
+    srand(time(0));
     // ui class
 
     string player_name;
@@ -15,6 +18,15 @@ int main()
     
     // Player class
     Player p(player_name,1,100,true);
+
+    // Enemy class
+    Enemy e1("Echo Warden",100,2,false);
+
+    // fight class
+    fight bt;
+
+    // item class
+    item bread("bread",15);
 
     // Area class
 
@@ -44,7 +56,7 @@ int main()
                 {
                 case 1:
                     cout << "You have successfully equiped all the items" << endl;
-                    p.take_item("Bread");
+                    p.take_item(bread);
                     p.power(2);
                     exitChoice = current_room->displayInfo();
                     u.market_exit(exitChoice);
@@ -68,7 +80,7 @@ int main()
                     
                     case 2:
                         cout << "You successfully took the bread" << endl;
-                        p.take_item("Bread");
+                        p.take_item(bread);
                         exitChoice = current_room->displayInfo();
                         u.market_exit(exitChoice);
                         current_room = &hall_of_echoes;
@@ -99,8 +111,9 @@ int main()
                 continue;
         }
         
+        // 2ND ROOM
         u.hallofEchoes_desc();
-
+        gameloop = bt.battle(e1,p,gameloop); // FIGHT FUNCTION 
 
     } // game loop
 
