@@ -43,6 +43,7 @@ void Player :: use_item(int choice){
     
     hp += inventory[choice-1].getHeal();
     cout << "Used " << inventory[choice - 1].getName() << " and healed " << inventory[choice-1].getHeal() << " HP!\nRemaining Health: " << hp << endl;
+    inventory.erase(inventory.begin() + (choice-1));
 
 }
 
