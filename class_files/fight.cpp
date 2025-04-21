@@ -37,6 +37,7 @@ bool fight ::  battle(Enemy &e, Player &p, bool gameloop){
     int def_dmg;
     int enemy_dmg;
     int item_choice;
+    p.resetHP();
 
     while(loop){
         if(e.getHP() != 0 || p.getHP() != 0){
