@@ -26,14 +26,18 @@ int main()
     fight bt;
 
     // item class
-    item bread("bread",15);
+    atk woodenSword("Wooden Sword",2);
+    heal bread("Bread",15);
+    heal apple("Apple",25);
 
     // Area class
 
     Area marketplace("Market Place",false,false,true);
     Area hall_of_echoes("Hall of Echoes",false,true,true);
+    Area chamber_of_trials("Chamber of Trials", false,false,false);
+    Area hollow_vault("The Hollow Vault",false,false,false);
     marketplace.setExit(&hall_of_echoes,nullptr,nullptr,nullptr);
-    hall_of_echoes.setExit(nullptr,nullptr,nullptr,nullptr);
+    hall_of_echoes.setExit(nullptr,nullptr,&hollow_vault,&chamber_of_trials);
     Area* current_room;
     
     // MARKET PLACE
@@ -42,9 +46,10 @@ int main()
     
     int gameloop = true;
     while(gameloop){
-
-        int market_choice = u.market_choice();
         string exitChoice;
+
+        // 1ST ROOM
+        int market_choice = u.market_choice();
         switch (market_choice)
         {
             case 1:
@@ -57,7 +62,7 @@ int main()
                 case 1:
                     cout << "You have successfully equiped all the items" << endl;
                     p.take_item(bread);
-                    p.power(2);
+                    p.power(woodenSword.getPow());
                     exitChoice = current_room->displayInfo();
                     u.market_exit(exitChoice);
                     current_room = &hall_of_echoes;
@@ -72,7 +77,7 @@ int main()
                     {
                     case 1:
                         cout << "You successfully took the sword!" << endl;
-                        p.power(2);
+                        p.power(woodenSword.getPow());
                         exitChoice = current_room->displayInfo();
                         u.market_exit(exitChoice);
                         current_room = &hall_of_echoes;
@@ -114,6 +119,24 @@ int main()
         // 2ND ROOM
         u.hallofEchoes_desc();
         gameloop = bt.battle(e1,p,gameloop); // FIGHT FUNCTION 
+        if (gameloop == false){
+            break;
+        }
+
+        u.hallofEchoes_awards();
+        p.take_item(apple);
+        exitChoice = current_room->displayInfo();
+
+        if (exitChoice == "west"){
+            current_room = &chamber_of_trials;
+
+        }
+        else if(exitChoice == "east"){
+            current_room = &hollow_vault;
+            u.hollowVault_desc();
+
+            // let me cook bro;
+        }
 
     } // game loop
 
