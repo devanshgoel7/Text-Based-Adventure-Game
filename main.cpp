@@ -1,12 +1,9 @@
 #include "header_files/game_headers.h"
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
 using namespace std;
 
 int main()
 {
-    srand(time(0));
     // ui class
 
     string player_name;
@@ -85,7 +82,7 @@ int main()
                     
                     case 2:
                         cout << "You successfully took the bread" << endl;
-                        p.take_item(bread);
+                        p.take_item("Bread");
                         exitChoice = current_room->displayInfo();
                         u.market_exit(exitChoice);
                         current_room = &hall_of_echoes;
@@ -116,7 +113,6 @@ int main()
                 continue;
         }
         
-        // 2ND ROOM
         u.hallofEchoes_desc();
         gameloop = bt.battle(e1,p,gameloop); // FIGHT FUNCTION 
         if (gameloop == false){

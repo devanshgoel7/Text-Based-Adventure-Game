@@ -1,18 +1,16 @@
 #include "player.h"
-#include "item.h"
+#include "fight.h"
 #include <iostream>
 #include <vector>
 using namespace std;
 
-Player :: Player(string n, int pow, int h, bool alive){
+Player :: Player(string n, int pow, int h, bool alive) : fight(pow, h){
     name = n;
-    atk_pow = pow;
-    hp = h;
     isalive = alive;
 }
 
-void Player :: take_item(item &i){
-    inventory.push_back(i);
+void Player :: take_item(string item){
+    inventory.push_back(item);
 }
 
 void Player :: show_inventory(){
@@ -22,7 +20,7 @@ void Player :: show_inventory(){
     else{
         for(size_t i = 0; i< inventory.size();i++){
             cout << "You have:\n";
-            cout << i+1 << ". " << inventory[i].getName() << endl;
+            cout << i+1 << ". " << inventory[i] << endl;
         }
     }
 }

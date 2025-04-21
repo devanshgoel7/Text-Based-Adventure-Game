@@ -1,21 +1,27 @@
 #include "fight.h"
-#include "player.h"
-#include "enemy.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
 
 using namespace std;
 
+fight :: fight(){
+    atk_pow = 0;
+}
+
+fight :: fight(int pow, int h){
+    atk_pow = pow;
+    hp = h;
+}
 
 int fight :: attack(int atk_pow){
-
+    srand(time(0));
     int random = (rand() % 10) + 1;
 
     return atk_pow*random;
 }
 
-void fight :: atk_dmg(int hp, int damage, string name){
+void fight :: atk_dmg(int damage, string name){
     hp -= damage;
 
     cout << name << " took " << damage << " damage" << endl;

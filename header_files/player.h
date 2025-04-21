@@ -1,32 +1,26 @@
 #ifndef PLAYER_H
 #define PLAYER_H
+
+#include "fight.h"
 #include <iostream>
-#include "item.h"
 #include <vector>
 using namespace std;
 
-class Player{
+class Player: public fight{
 
     string name;
-    vector <item> inventory;
+    vector <string> inventory;
     string move;
     bool isalive;
-    int atk_pow;
-    int hp;
-
 
     public:
         Player(string n, int pow, int h, bool alive);
 
-        void take_item(item &i);
+        void take_item(string item);
 
         void power(int atkpower);
         
         void show_inventory();
-
-        void atk_dmg(int damage);
-
-        void use_item(int choice);
 
         void isdefeated();
 
