@@ -62,3 +62,7 @@ int Player :: getHP(){
 int Player :: getpow(){
     return atk_pow;
 }
+
+void Player :: resetHP(){
+    hp = 100;
+}
