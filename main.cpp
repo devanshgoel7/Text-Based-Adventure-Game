@@ -82,7 +82,7 @@ int main()
                     
                     case 2:
                         cout << "You successfully took the bread" << endl;
-                        p.take_item("Bread");
+                        p.take_item(bread);
                         exitChoice = current_room->displayInfo();
                         u.market_exit(exitChoice);
                         current_room = &hall_of_echoes;
