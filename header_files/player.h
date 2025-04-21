@@ -34,6 +34,8 @@ class Player{
 
         int getpow();
 
+        void resetHP();
+
 };
 
 #endif
