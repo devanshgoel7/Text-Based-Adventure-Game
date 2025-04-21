@@ -2,26 +2,21 @@
 #define FIGHT_H
 
 #include <iostream>
+#include "enemy.h"
+#include "player.h"
 using namespace std;
 
 class fight{
-    protected:
-
-    int atk_pow;
-    int hp;
 
     public:
-        fight();
-
-        fight(int pow, int h);
 
         int attack(int atk_pow);
 
-        void atk_dmg(int damage, string name);
+        void atk_dmg(int hp,int damage, string name);
 
         int defence(int atk_dmg);
 
-        void def_dmg(int damage, string name);
+        bool battle(Enemy &e, Player &p, bool gameloop);
 };
 
 #endif
