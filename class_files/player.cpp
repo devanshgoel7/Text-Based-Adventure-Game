@@ -25,6 +25,26 @@ void Player :: show_inventory(){
     }
 }
 
+void Player :: atk_dmg(int damage){
+    hp -= damage;
+
+    if(hp < 0){
+        hp = 0;
+    }
+
+    cout << endl;
+    cout << "You took " << damage << " damage" << endl;
+    cout << "Remaining Health: " << hp << endl;
+}
+
+void Player :: use_item(int choice){
+    
+    hp += inventory[choice-1].getHeal();
+    cout << "Used " << inventory[choice - 1].getName() << " and healed " << inventory[choice-1].getHeal() << " HP!\nRemaining Health: " << hp << endl;
+    inventory.erase(inventory.begin() + (choice-1));
+
+}
+
 void Player :: power(int atkpower){
     atk_pow = atkpower;
 }
