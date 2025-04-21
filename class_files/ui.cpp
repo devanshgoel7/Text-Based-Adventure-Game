@@ -39,3 +39,13 @@ void ui :: market_exit(string exitChoice){
 void ui :: hallofEchoes_desc(){
     cout << "You enter a cold, silent chamber where torchlight flickers against dark stone walls. Faded carvings of forgotten rulers stare back at you.\nThe air feels heavy then, a distant clank. A Echo Warden steps from the shadows, blade raised.\nHe approaches you, it's time to FIGHT\n";
 }
+
+void ui :: hallofEchoes_awards(){
+    cout << "\nIn its place, a fresh apple, gift for your triumph.\nPress Enter to continue: ";
+    cin.ignore();
+    cin.get();
+}
+
+void ui :: hollowVault_desc(){
+    cout << "You step into the Hollow Vault , a cold, silent chamber carved from ancient stone.\nAt the center, a lone chest sits atop a worn pedestal, its surface dusty and sealed with an old iron lock. \nThe faint glint of treasure teases you from within, but the chest won't give in easily.";
+}

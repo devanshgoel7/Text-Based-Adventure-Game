@@ -17,6 +17,9 @@ class ui{
         void market_exit(string exitChoice);
 
         void hallofEchoes_desc();
+        void hallofEchoes_awards();
+
+        void hollowVault_desc();
 };
 
 #endif
