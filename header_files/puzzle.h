@@ -3,9 +3,9 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-class PUZZLES{
+class puzzles{
    protected:
-   vector<pair<string, string>> puzzles = {
+   vector<pair<string, string>> puzzle = {
       {"I have keys but open no locks. I have space but no room. You can enter, but you can't go outside. What am I?", "keyboard"},
       {"The more you take, the more I leave behind. What am I?", "footsteps"},
       {"Born of flame, I devour the dark. Without me, secrets remain hidden. What am I?", "torch"},
