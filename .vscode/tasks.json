@@ -12,7 +12,7 @@
                     "class_files/area.cpp",
                     "class_files/enemy.cpp",
                     "class_files/fight.cpp",
-                    
+                    "class_files/item.cpp",
                     "class_files/player.cpp",
                     "class_files/ui.cpp",
                     "-I", "header_files",

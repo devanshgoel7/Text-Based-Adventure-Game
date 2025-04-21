@@ -6,5 +6,7 @@
 #include "fight.h"
 #include "player.h"
 #include "ui.h"
+#include "item.h"
+#include "puzzle.h"
 
 #endif
