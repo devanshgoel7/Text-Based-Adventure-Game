@@ -15,7 +15,7 @@ class puzzles{
       {"I walk with you till the final gate, then stab you in the back. My name brings dread in loyal hearts.", "betrayal"}
   };
    public:
-         bool getpuzzle();
+         bool getpuzzle(int index);
    
 
 };
