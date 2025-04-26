@@ -40,8 +40,15 @@ string Area::displayInfo() {
     if (west) cout << "west ";
     cout << endl;
 
-    cout << "Where would you like to exit:\nEnter your choice: ";
-    cin >> exit_choice;
+    while(true){
+        cout << "Where would you like to exit:\nEnter your choice: ";
+        cin >> exit_choice;
+        if (exit_choice != "north" && exit_choice != "south" && exit_choice != "east" && exit_choice != "west"){
+            cout << "\nPlease enter only from the above choices!\n";
+            continue;
+        }
+        break;
+    }
     return exit_choice;
 }
 
