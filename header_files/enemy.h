@@ -1,12 +1,12 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#include "fight.h"
+
 #include <iostream>
 using namespace std;
 
-class Enemy: public fight{
 
+class Enemy{
     private:
 
     string name;
@@ -18,7 +18,7 @@ class Enemy: public fight{
     
     Enemy();
 
-    Enemy(string n,int pow, int h, bool def);
+    Enemy(string n, int h,int pow, bool def);
 
     int getHP();
 
