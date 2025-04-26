@@ -11,15 +11,33 @@ class ui{
         ui(string name);
 
         void startermsg();
+        int chest_choice();
+        void enterContinue();
 
         void market_desc();
-        int market_choice();
         void market_exit(string exitChoice);
 
         void hallofEchoes_desc();
         void hallofEchoes_awards();
 
         void hollowVault_desc();
+        void hollowVault_sanctum_exit(string exitChoice);
+
+        void chamberofTrials_desc();
+        void chamberofTrials_exit();
+
+        void sanctum_desc();
+
+        void taleofZerzura_desc();
+
+        void trapRoom_desc();
+
+        void chamberofBlades_desc();
+        void chamberofBlades_awards();
+
+        void vaultofZerzura_desc();
+
+        void gameEnd();
 };
 
 #endif
