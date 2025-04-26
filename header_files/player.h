@@ -36,6 +36,8 @@ class Player{
 
         void resetHP();
 
+        void emptyInventory();
+
 };
 
 #endif

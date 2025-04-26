@@ -20,8 +20,8 @@ void Player :: show_inventory(){
         cout << "You have nothing in your inventory\n";
     }
     else{
+        cout << "You have:\n";
         for(size_t i = 0; i< inventory.size();i++){
-            cout << "You have:\n";
             cout << i+1 << ". " << inventory[i].getName() << endl;
         }
     }
@@ -40,9 +40,19 @@ void Player :: atk_dmg(int damage){
 }
 
 void Player :: use_item(int choice){
-    
-    hp += inventory[choice-1].getHeal();
-    cout << "Used " << inventory[choice - 1].getName() << " and healed " << inventory[choice-1].getHeal() << " HP!\nRemaining Health: " << hp << endl;
+
+    if (inventory[choice-1].getName() == "God Apple"){
+        hp = 100;
+        cout << "Used " << inventory[choice - 1].getName() << " and restored to full HP!\nRemaining Health: " << hp << endl;
+    }
+    else{
+        hp += inventory[choice-1].getHeal();
+        if (hp > 100){
+            hp = 100;
+        }
+        cout << "Used " << inventory[choice - 1].getName() << " and healed " << inventory[choice-1].getHeal() << " HP!\nRemaining Health: " << hp << endl;
+    }
+    inventory.erase(inventory.begin() + (choice-1));
 
 }
 
@@ -64,4 +74,8 @@ int Player :: getpow(){
 
 void Player :: resetHP(){
     hp = 100;
+}
+
+void Player :: emptyInventory(){
+    inventory.clear();
 }
