@@ -18,7 +18,13 @@ void fight :: atk_dmg(int hp, int damage, string name){
     cout << "Remaining Health: " << hp << endl;
 }
 
+int fight :: defence(int atk_dmg){
+    srand(time(0));
+    float random = (rand() % 60) + 1;
+    int new_dmg = atk_dmg - (atk_dmg*(random/100));
 
+    return new_dmg;
+}
 
 bool fight ::  battle(Enemy &e, Player &p, bool gameloop){
     bool loop = true;
