@@ -38,6 +38,8 @@ class Player{
 
         void emptyInventory();
 
+        bool isEmpty();
+
 };
 
 #endif

@@ -1,8 +1,6 @@
 #include  "ui.h"
 #include <iostream>
-#include<chrono>
 #include<string>
-#include<thread>
 using namespace std;
 
 ui :: ui(string name){
@@ -10,12 +8,7 @@ ui :: ui(string name){
 }
 
 void ui :: startermsg(){
-    string text="\nIn the Heart of the world, hidden from prying eyes, lay the ancient city af Zerzura. Legends spoke of a \nmagnificent crown hidden within its walls, waiting for the worthy adventurer\n"+player_name + ", a curious and determined treasure hunter, have braved the jungle's dangers to find this lost city.\n\n"+"The heavy gates creak shut behind you. Ahead, crumbling stalls line a dusty marketplace.\n\n" ;
-    
-        for (char c : text) {
-            cout << c << flush;
-            this_thread::sleep_for(chrono::milliseconds(30));
-        }
+    cout << "\nIn the Heart of the world, hidden from prying eyes, lay the ancient city af Zerzura. Legends spoke of a \nmagnificent crown hidden within its walls, waiting for the worthy adventurer\n"+player_name + ", a curious and determined treasure hunter, have braved the jungle's dangers to find this lost city.\n\n"+"The heavy gates creak shut behind you. Ahead, crumbling stalls line a dusty marketplace.\n\n" ;
 }
 
 
